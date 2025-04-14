@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">FlatDecorationShop</string>
+    <string name="username">Felhasználónév</string>
+    <string name="password">Jelszó</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="registartion">Regisztráció</string>
+    <string name="mainTitle">Lakás Dekoráció Webshop</string>
+    <string name="email">E-mail cím</string>
+    <string name="passwordAgain">Jelszó újra</string>
+    <string name="cancel">Mégse</string>
+    <string name="phone">Telefonszám</string>
+    <string name="exit">Kilépés</string>
+    <string name="company">Cég</string>
+    <string name="privatePerson">Magánszemély</string>
+    <string name="cart">Kosárba</string>
+    <string name="product_information">Termékinformáció</string>
+    <string name="description">Leírás</string>
+    <string-array name="whereFoundUs">
+        <item>Nem válaszolok</item>
+        <item>Interneten</item>
+        <item>Közösségi média</item>
+        <item>Ismerősök</item>
+    </string-array>
+
+    <!-- RecyclerView -->
+    <string name="title_placeholder">Név</string>
+    <string name="itme_placeholder">Leírás</string>
+    <string name="item_information_placeholder">Infó a termékről</string>
+
+    <string-array name="shopping_item_names">
+        <item>Képkeret</item>
+        <item>Ébresztőóra</item>
+        <item>Műnövény </item>
+        <item>Váza</item>
+    </string-array>
+
+    <string-array name="shopping_item_description">
+        <item>Ez egy képkeret!</item>
+        <item>Ez egy ébresztőóra!</item>
+        <item>Ez egy műnövény!</item>
+        <item>Ez egy váza!</item>
+    </string-array>
+
+    <string-array name="shopping_item_rates">
+        <item>4</item>
+        <item>3</item>
+        <item>5</item>
+        <item>3.5</item>
+    </string-array>
+
+    <string-array name="shopping_item_images">
+        <item>@drawable/picture_frame</item>
+        <item>@drawable/alarmclock</item>
+        <item>@drawable/plastic_plant</item>
+        <item>@drawable/vase</item>
+    </string-array>
+
+    <string-array name="shopping_item_prices">
+        <item>1990 Ft</item>
+        <item>11000 Ft</item>
+        <item>5850 Ft</item>
+        <item>1100 Ft</item>
+    </string-array>
+</resources>

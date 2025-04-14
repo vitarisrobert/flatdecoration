@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "254980487767",
+    "project_id": "flatdecorationshop",
+    "storage_bucket": "flatdecorationshop.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254980487767:android:989b1a7cdf350aa44a0112",
+        "android_client_info": {
+          "package_name": "flatdecoration.shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254980487767-tta50bpae9tthb7ml9uqrqh8ob95b8h1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "flatdecoration.shop",
+            "certificate_hash": "f858552bf58af2053765d3fa35b941a291db1e85"
+          }
+        },
+        {
+          "client_id": "254980487767-t1g7so6ns03n5suph7i1tp8tp3udnc5u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK9iqVvKYandP1oNAjRDpf7ECFOqXRXoo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254980487767-t1g7so6ns03n5suph7i1tp8tp3udnc5u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
