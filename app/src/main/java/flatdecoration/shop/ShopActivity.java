@@ -499,7 +499,7 @@ public class ShopActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if(event.values[0] > 20 && isRunning == false){
+        if(event.values[0] > 40 && isRunning == false){
             isRunning = true;
             mediaPlayer = new MediaPlayer();
             try{
@@ -511,7 +511,7 @@ public class ShopActivity extends AppCompatActivity implements SensorEventListen
             }
         }
 
-        if (event.values[0] < 20 && isRunning == true) {
+        if (event.values[0] < 40 && isRunning == true) {
             isRunning = false;
             if (mediaPlayer != null && mediaPlayer.isPlaying()) {
                 mediaPlayer.stop();

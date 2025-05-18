@@ -87,6 +87,11 @@ public class RegistrationActivity extends AppCompatActivity {
             return;
         }
 
+        if (password.length() < 6) {
+            Toast.makeText(this, "A jelszónak legalább 6 karakter hosszúnak kell lennie!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         if (passwordAgain.isEmpty()) {
             Toast.makeText(this, "Jelszó megerősítése kötelező!", Toast.LENGTH_SHORT).show();
             return;
