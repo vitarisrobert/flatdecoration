@@ -1,8 +1,16 @@
 package flatdecoration.shop;
 
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.media.MediaParser;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,15 +35,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
     private static final String LOG_TAG = RegistrationActivity.class.getName();
     private static final int RC_SIGN_IN = 123;
-
     private static final int SECRET_KEY = 97;
 
     EditText emailET;
     EditText passwordET;
-
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
 
@@ -44,6 +52,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         emailET = findViewById(R.id.editText_Email);
         passwordET = findViewById(R.id.editText_Password);
@@ -56,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
+        //Random Async Loader
         getSupportLoaderManager().restartLoader(0, null, this);
     }
 
@@ -94,6 +107,16 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void login(View view) {
         String username = emailET.getText().toString();
         String password = passwordET.getText().toString();
+
+        if (username.isEmpty()) {
+            Toast.makeText(this, "Kérlek add meg az e-mail címet!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (password.isEmpty()) {
+            Toast.makeText(this, "Kérlek add meg a jelszót!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -163,4 +186,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onLoaderReset(@NonNull Loader<String> loader) {}
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return false;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return false;
+    }
 }
+

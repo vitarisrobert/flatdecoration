@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="8dp">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:paddingBottom="30dp">
 
         <ImageView
             android:id="@+id/itemImage"
@@ -16,13 +21,14 @@
 
         <TextView
             android:id="@+id/itemTitle"
-            style= ""
+            style=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/itemImage"
             android:padding="8dp"
             android:text="@string/description"
-            android:textColor="?android:textColorSecondary"/>
+            android:textColor="?android:textColorSecondary"
+            android:textSize="18sp" />
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -32,7 +38,8 @@
             android:layout_below="@+id/itemTitle"
             android:layout_marginStart="8dp"
             android:isIndicator="true"
-            android:numStars="5"/>
+            android:numStars="5"
+            android:progressTint="@color/orange"/>
 
         <TextView
             android:id="@+id/subTitle"
@@ -51,16 +58,25 @@
             android:layout_below="@+id/subTitle"
             android:layout_marginBottom="12dp"
             android:padding="8dp"
-            android:textColor="@color/red"
-            android:layout_centerHorizontal="true"/>
+            android:textColor="#6B460C"
+            android:layout_centerHorizontal="true"
+            android:textSize="22sp"/>
 
-        <Button
-            android:id="@+id/addCart"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/price"
-            android:text="@string/cart"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:id="@+id/addCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#2BF030"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/cart"/>
+        </LinearLayout>
 
     </RelativeLayout>
 

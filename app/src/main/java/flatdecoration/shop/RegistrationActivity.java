@@ -3,6 +3,7 @@ package flatdecoration.shop;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -48,6 +49,10 @@ public class RegistrationActivity extends AppCompatActivity {
             finish();
         }
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         editText_Username = findViewById(R.id.editText_Username);
         editText_Email = findViewById(R.id.editText_Email);
         editText_Password = findViewById(R.id.editText_Password);
@@ -67,8 +72,33 @@ public class RegistrationActivity extends AppCompatActivity {
         String passwordAgain = editText_PasswordAgain.getText().toString();
         String phone = editText_Phone.getText().toString();
 
-        if(!password.equals(passwordAgain)){
-            Log.e(LOG_TAG, "Nem egyforma a két jelszó!");
+        if (username.isEmpty()) {
+            Toast.makeText(this, "Teljes név megadása kötelező!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (email.isEmpty()) {
+            Toast.makeText(this, "E-mail cím megadása kötelező!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (password.isEmpty()) {
+            Toast.makeText(this, "Jelszó megadása kötelező!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (passwordAgain.isEmpty()) {
+            Toast.makeText(this, "Jelszó megerősítése kötelező!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (phone.isEmpty()) {
+            Toast.makeText(this, "Telefonszám megadása kötelező!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (!password.equals(passwordAgain)) {
+            Toast.makeText(this, "A két jelszó nem egyezik!", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -96,4 +126,16 @@ public class RegistrationActivity extends AppCompatActivity {
     public void cancel(View view) {
         finish();
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return false;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return false;
+    }
+
 }

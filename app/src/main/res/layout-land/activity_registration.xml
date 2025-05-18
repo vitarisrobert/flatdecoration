@@ -1,184 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrationActivity">
+    tools:context=".RegistrationActivity"
+    android:background="@drawable/registration_background">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.5"
-        android:background="@drawable/registration" />
-
-    <TextView
-        android:id="@+id/textView_Registration"
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="-8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/white"
-        android:text="@string/registartion"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/editText_Username"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_below="@id/textView_Registration"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="@dimen/margin15"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="@dimen/margin15"
-        android:background="@color/white"
-        android:ems="12"
-        android:hint="@string/username"
-        android:inputType="textPersonName"
-        android:paddingStart="@dimen/default_margin"
-        android:textColor="@color/black" />
-
-    <EditText
-        android:id="@+id/editText_Email"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_below="@id/editText_Username"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="@dimen/margin15"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="@dimen/margin15"
-        android:background="@color/white"
-        android:ems="12"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:paddingStart="@dimen/default_margin"
-        android:textColor="@color/black" />
-
-    <EditText
-        android:id="@+id/editText_Password"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_below="@id/editText_Email"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="@dimen/margin15"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="@dimen/margin15"
-        android:background="@color/white"
-        android:ems="12"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:paddingStart="@dimen/default_margin"
-        android:textColor="@color/black" />
-
-    <EditText
-        android:id="@+id/editText_PasswordAgain"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_below="@id/editText_Password"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="@dimen/margin15"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="@dimen/margin15"
-        android:background="@color/white"
-        android:ems="12"
-        android:hint="@string/passwordAgain"
-        android:inputType="textPassword"
-        android:paddingStart="@dimen/default_margin"
-        android:textColor="@color/black" />
-
-    <EditText
-        android:id="@+id/editText_Phone"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_below="@id/editText_PasswordAgain"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="@dimen/margin15"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="@dimen/margin15"
-        android:background="@color/white"
-        android:ems="12"
-        android:hint="@string/phone"
-        android:inputType="phone"
-        android:paddingStart="@dimen/default_margin"
-        android:textColor="@color/black" />
-
-    <RadioGroup
-        android:id="@+id/customerTypeGroup"
+    <RelativeLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/default_margin"
-        android:layout_marginRight="@dimen/default_margin"
-        android:layout_below="@id/editText_Phone">
+        android:alpha="1">
 
-        <RadioButton
-            android:id="@+id/radioButton_PivatePerson"
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/textView_Registration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/white"
-            android:paddingStart="5dp"
-            android:text="@string/privatePerson"
-            android:textColor="@color/black" />
-
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:textAllCaps="true"
             android:textColor="@color/black"
-            android:background="@color/white"
-            android:layout_marginLeft="10dp"
-            android:paddingStart="5dp"
-            android:text="@string/company"/>
-
-    </RadioGroup>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/customerTypeGroup"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true">
-
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:background="#6B460C"
-            android:onClick="registration"
+            android:layout_marginTop="40dp"
             android:text="@string/registartion"
-            android:textColor="@color/white" />
+            android:textSize="26sp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:textAlignment="center"
+            android:textStyle="bold"/>
 
-        <Button
-            android:layout_width="120dp"
+        <EditText
+            android:id="@+id/editText_Username"
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/textView_Registration"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_background"
+            android:textColor="@android:color/black"
+            android:ems="12"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            android:paddingStart="@dimen/default_margin"/>
+
+        <EditText
+            android:id="@+id/editText_Email"
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/editText_Username"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_background"
+            android:textColor="@android:color/black"
+            android:ems="12"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/default_margin"/>
+
+        <EditText
+            android:id="@+id/editText_Password"
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/editText_Email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_background"
+            android:textColor="@android:color/black"
+            android:ems="12"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/default_margin"/>
+
+        <EditText
+            android:id="@+id/editText_PasswordAgain"
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/editText_Password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_background"
+            android:textColor="@android:color/black"
+            android:ems="12"
+            android:hint="@string/passwordAgain"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/default_margin"/>
+
+        <EditText
+            android:id="@+id/editText_Phone"
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/editText_PasswordAgain"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_background"
+            android:textColor="@android:color/black"
+            android:ems="12"
+            android:hint="@string/phone"
+            android:inputType="phone"
+            android:paddingStart="@dimen/default_margin"/>
+
+        <RadioGroup
+            android:id="@+id/customerTypeGroup"
+            android:layout_width="400dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/editText_Phone">
+
+            <RadioButton
+                android:id="@+id/radioButton_PivatePerson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/edittext_background"
+                android:textColor="@android:color/black"
+                android:paddingStart="5dp"
+                android:text="@string/privatePerson"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_background"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="10dp"
+                android:paddingStart="5dp"
+                android:text="@string/company"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:background="#6B460C"
-            android:textColor="@color/white"            android:text="@string/cancel"
-            android:onClick="cancel"/>
+            android:orientation="horizontal"
+            android:layout_below="@+id/customerTypeGroup"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp">
 
-    </LinearLayout>
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:onClick="registration"
+                android:text="@string/registartion"
+                android:textColor="@color/white" />
 
-</RelativeLayout>
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/button_background"
+                android:textColor="@color/white"
+                android:text="@string/cancel"
+                android:onClick="cancel"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

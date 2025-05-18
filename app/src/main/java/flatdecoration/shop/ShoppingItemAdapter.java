@@ -1,8 +1,6 @@
 package flatdecoration.shop;
 
 import android.content.Context;
-import android.icu.text.Transliterator;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,11 +20,11 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapter.ViewHolder> implements Filterable {
-    private ArrayList<ShoppingItem> mShoppingItemData;
-    private ArrayList<ShoppingItem> mShoppingItemDataAll;
+    private ArrayList<Item> mShoppingItemData;
+    private ArrayList<Item> mShoppingItemDataAll;
     private  Context mContext;
     private int lastPosition = -1;
-    ShoppingItemAdapter(Context context, ArrayList<ShoppingItem> itemsData){
+    ShoppingItemAdapter(Context context, ArrayList<Item> itemsData){
         this.mShoppingItemData = itemsData;
         this.mShoppingItemDataAll = itemsData;
         this.mContext = context;
@@ -39,7 +37,7 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
 
     @Override
     public void onBindViewHolder(ShoppingItemAdapter.ViewHolder holder, int position) {
-        ShoppingItem currentItem = mShoppingItemData.get(position);
+        Item currentItem = mShoppingItemData.get(position);
 
         holder.bindTo(currentItem);
 
@@ -58,7 +56,7 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
     private Filter shoppingFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
-            ArrayList<ShoppingItem> filteredList = new ArrayList<>();
+            ArrayList<Item> filteredList = new ArrayList<>();
             FilterResults results = new FilterResults();
 
             if(charSequence == null || charSequence.length() == 0 ){
@@ -67,7 +65,7 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
             }else{
                 String filterPattern = charSequence.toString().toLowerCase().trim();
 
-                for(ShoppingItem item : mShoppingItemDataAll) {
+                for(Item item : mShoppingItemDataAll) {
                     if(item.getName().toLowerCase().contains(filterPattern)){
                         filteredList.add(item);
                     }
@@ -100,23 +98,17 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
             mPriceText = itemView.findViewById(R.id.price);
             mItemImage = itemView.findViewById(R.id.itemImage);
             mRatingBar = itemView.findViewById(R.id.ratingBar);
-
-            itemView.findViewById(R.id.addCart).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.d("Activity","Hozzáadás kosárhoz sikeres!");
-                    ((ShopActivity)mContext).updateAlertIcon();
-                }
-            });
         }
 
-        public void bindTo(ShoppingItem currentItem) {
+        public void bindTo(Item currentItem) {
             mTitleText.setText(currentItem.getName());
             mSubText.setText(currentItem.getInformation());
             mPriceText.setText(currentItem.getPrice());
             mRatingBar.setRating(currentItem.getRatedInformation());
 
             Glide.with(mContext).load(currentItem.getImageResource()).into(mItemImage);
+            itemView.findViewById(R.id.addCart).setOnClickListener(view -> ((ShopActivity)mContext).increaseAlertIcon(currentItem));
+            itemView.findViewById(R.id.addCart).setOnClickListener(view -> ((ShopActivity)mContext).addCart(currentItem));
         }
     }
 }

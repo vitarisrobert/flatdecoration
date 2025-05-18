@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.CAMERA"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature android:name="android.hardware.camera2"   android:required="true"/>
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +22,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlatDecorationShop"
         tools:targetApi="31">
+        <activity
+            android:name=".CameraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CartActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
+
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name=".NotificationJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
         <activity
             android:name=".ShopActivity"
             android:exported="false" />
